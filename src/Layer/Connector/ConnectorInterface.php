@@ -9,16 +9,16 @@ namespace Layer\Connector;
 interface ConnectorInterface
 {
     /**
-     * @param $host
+     * @param $dataBaseName
      * @param $user
      * @param $password
      * @return mixed
      */
-    public function connect($host, $user, $password);
+    public static function connect($dataBaseName, $user, $password);
 
     /**
      * @param $db
      * @return mixed
      */
-    public function connectClose($db);
+    public static function connectClose(&$db);
 }
