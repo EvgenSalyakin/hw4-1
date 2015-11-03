@@ -4,7 +4,7 @@ namespace Catalogs {
 
     class Worker extends AbstractCatalog
         {
-        protected $name;
+        protected $nameWorker;
 
         protected $position;
 
@@ -13,17 +13,17 @@ namespace Catalogs {
         /**
          * @return mixed
          */
-        public function getName()
+        public function getNameWorker()
         {
-            return $this->name;
+            return $this->nameWorker;
         }
 
         /**
          * @param mixed $name
          */
-        public function setName($name)
+        public function setNameWorker($name)
         {
-            $this->name = $name;
+            $this->nameWorker = $name;
         }
 
         /**

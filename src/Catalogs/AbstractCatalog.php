@@ -5,7 +5,7 @@ namespace Catalogs;
 abstract class AbstractCatalog
 {
 
-    protected $UID;
+    protected $id;
 
     protected $code;
 
@@ -14,17 +14,17 @@ abstract class AbstractCatalog
     /**
      * @return mixed
      */
-    public function getUID()
+    public function getId()
     {
-        return $this->UID;
+        return $this->id;
     }
 
     /**
      * @param mixed $UID
      */
-    protected function setUID($UID)
+    protected function setUID($id)
     {
-        $this->UID = $UID;
+        $this->UID = $id;
     }
 
     /**

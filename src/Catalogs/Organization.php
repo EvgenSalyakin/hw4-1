@@ -5,7 +5,7 @@ namespace Catalogs;
 class Organization extends AbstractCatalog
 {
 
-    protected $name;
+    protected $nameOrganization;
 
     protected $address;
 
@@ -13,22 +13,20 @@ class Organization extends AbstractCatalog
 
     protected $phone;
 
-    protected $registrationCode;
-
-    /**
+     /**
      * @return mixed
      */
-    public function getName()
+    public function getNameOrganization()
     {
-        return $this->name;
+        return $this->nameOrganization;
     }
 
     /**
      * @param mixed $name
      */
-    public function setName($name)
+    public function setNameOrganization($name)
     {
-        $this->name = $name;
+        $this->nameOrganization = $name;
     }
 
     /**
@@ -78,22 +76,5 @@ class Organization extends AbstractCatalog
     {
         $this->phone = $phone;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getRegistrationCode()
-    {
-        return $this->registrationCode;
-    }
-
-    /**
-     * @param mixed $registrationCode
-     */
-    public function setRegistrationCode($registrationCode)
-    {
-        $this->registrationCode = $registrationCode;
-    }
-
 
 }

@@ -14,7 +14,51 @@ class TableManager
     public static function createTables(\PDO $db)
     {
 
-        echo 'Create';
+        if (!self::tableExists($db, 'organization')) {
+            try {
+                $db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);//Error Handling
+                $sql = '
+                CREATE TABLE IF NOT EXISTS `organization` (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                code INT NOT NULL,
+                description VARCHAR( 250 ),
+                nameOrganization VARCHAR(50) NOT NULL,
+                address VARCHAR( 250 ),
+                director VARCHAR( 250 ),
+                phone VARCHAR(50)
+                )
+                ';
+                $statement = $db->prepare($sql);
+                $statement->execute();
+
+
+            } catch (\PDOException $e) {
+                echo $e->getMessage();
+
+            }
+        }
+
+        if (!self::tableExists($db, 'worker')) {
+            try {
+                $db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);//Error Handling
+                $sql = '
+                CREATE TABLE IF NOT EXISTS `worker` (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                description VARCHAR( 250 ),
+                nameWorker VARCHAR(150) NOT NULL,
+                position VARCHAR( 250 ),
+                subdivision VARCHAR( 250 )
+                )
+                ';
+                $statement = $db->prepare($sql);
+                $statement->execute();
+
+
+            } catch (\PDOException $e) {
+                echo $e->getMessage();
+
+            }
+        }
         return true;
     }
 
