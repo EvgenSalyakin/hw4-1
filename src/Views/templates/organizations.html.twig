@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+</head>
+<body>
+<h1>Organizations</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Director</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>Description</th>
+    </tr>
+    {% for organization in organizations %}
+        <tr>
+            <td>{{ organization.id }}</td>
+            <td>{{ organization.code }}</td>
+            <td>{{ organization.nameOrganization }}</td>
+            <td>{{ organization.director }}</td>
+            <td>{{ organization.address }}</td>
+            <td>{{ organization.phone }}$</td>
+            <td>{{ organization.description }}$</td>
+            <td><a href="index.php?controller=organizations&action=edit&id={{ organization.id }}">edit</a> <a href="index.php?controller=organizations&action=delete&id={{ organization.id }}">delete</a></td>
+        </tr>
+    {% endfor %}
+</table>
+<a href="index.php?controller=organizations&action=new&id={{ organization.id }}">Add a new organization</a><br /><br />
+<!--
+<a href="index.php?controller=workers&action=index">Workers list</a><br />
+-->
+</body>
+</html>

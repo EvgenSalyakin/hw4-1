@@ -14,11 +14,11 @@ class TableManager
     public static function createTables(\PDO $db)
     {
 
-        if (!self::tableExists($db, 'organization')) {
+        if (!self::tableExists($db, 'organizations')) {
             try {
                 $db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);//Error Handling
                 $sql = '
-                CREATE TABLE IF NOT EXISTS `organization` (
+                CREATE TABLE IF NOT EXISTS `organizations` (
                 id INT AUTO_INCREMENT PRIMARY KEY,
                 code INT NOT NULL,
                 description VARCHAR( 250 ),
@@ -38,11 +38,11 @@ class TableManager
             }
         }
 
-        if (!self::tableExists($db, 'worker')) {
+        if (!self::tableExists($db, 'workers')) {
             try {
                 $db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);//Error Handling
                 $sql = '
-                CREATE TABLE IF NOT EXISTS `worker` (
+                CREATE TABLE IF NOT EXISTS `workers` (
                 id INT AUTO_INCREMENT PRIMARY KEY,
                 description VARCHAR( 250 ),
                 nameWorker VARCHAR(150) NOT NULL,

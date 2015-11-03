@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+</head>
+<body>
+<h1>Add a new organization</h1>
+<form method="POST" action="index.php?controller=organizations&action=new" style="margin-left: 3%">
+    <div class="row">
+        <label for="nameOrganization">Name:</label>
+        <input type="text" id="nameOrganization" name="nameOrganization" required value="{{ nameOrganization }}">
+    </div>
+    <div class="row">
+        <label for="address">Address :</label>
+        <input type="text" id="address" name="address" required value="{{ address }}">
+    </div>
+    <div class="row">
+        <label for="code">Code:</label>
+        <input type="text" id="code" name="code" required value="{{ code }}">
+    </div>
+    <div class="row">
+        <label for="director">Director:</label>
+        <input type="text" id="director" name="director" required value="{{ director }}">
+    </div>
+    <div class="row">
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" required value="{{ phone }}">
+    </div>
+    <div class="row">
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" required value="{{ description }}">
+    </div>
+    <div class="row">
+        <input type="submit" value="Create">
+    </div>
+</form>
+
+</body>
+</html>

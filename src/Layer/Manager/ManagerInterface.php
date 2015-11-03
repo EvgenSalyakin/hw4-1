@@ -2,6 +2,7 @@
 
 namespace Layer\Manager;
 
+
 /**
  * Interface ManagerInterface
  * @package Layer\Manager
@@ -18,9 +19,10 @@ interface ManagerInterface
     /**
      * Update exist entity data in the DB
      * @param $entity
+     * @param $id
      * @return mixed
      */
-    public function update($entity);
+    public function update($id, $entity);
 
     /**
      * Delete entity data from the DB
@@ -30,19 +32,19 @@ interface ManagerInterface
     public function remove($entity);
 
     /**
-     * Search entity data in the DB by Id
-     * @param $entityName
+     * Search entity data in the DB by Id*
      * @param $id
      * @return mixed
      */
-    public function find($entityName, $id);
+    public function find($id);
 
     /**
      * Search all entity data in the DB
-     * @param $entityName
+     * @param $limit
+     * @param $offset
      * @return array
      */
-    public function findAll($entityName);
+    public function findAll($limit, $offset);
 
     /**
      * Search all entity data in the DB like $criteria rules
@@ -50,5 +52,5 @@ interface ManagerInterface
      * @param array $criteria
      * @return mixed
      */
-    public function findBy($entityName, $criteria = []);
+   // public function findBy($entityName, $criteria = []);
 }
